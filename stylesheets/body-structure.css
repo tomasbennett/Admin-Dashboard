@@ -1,0 +1,49 @@
+:root{
+    font-size: 62.5%;
+
+    --body-structure-columns: 15rem minmax(100rem, 1fr);
+    --body-structure-rows: 25rem 
+                           minmax(50rem, 1fr);
+}
+
+*,
+*::after,
+*::before{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-size: 1.6rem;
+
+    width: 100dvw;
+    height: 100dvh;
+    overflow: auto;
+
+    display: grid;
+    grid-template-columns: var(--body-structure-columns);
+    grid-template-rows: var(--body-structure-rows);
+    grid-template-areas: "sidebar header"
+                         "sidebar main";
+
+
+}
+
+header{
+    grid-area: header;
+
+    background-color: aqua;
+}
+
+aside{
+    grid-area: sidebar;
+
+    background-color: blue;
+}
+
+main{
+    grid-area: main;
+
+    background-color: darkblue;
+}

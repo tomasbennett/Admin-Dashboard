@@ -1,0 +1,43 @@
+:root{
+    --header-structure-columns: 45rem 45rem;
+    --header-structure-rows: 1fr
+                             1fr;
+}
+
+header{
+    display: grid;
+    grid-template-columns: var(--header-structure-columns);
+    grid-template-rows: var(--header-structure-rows);
+    grid-template-areas: "search-bar settings"
+                         "description share";
+
+    row-gap: 4rem;
+    place-content: space-around;
+
+    /* padding: 2rem 0; */
+}
+
+header > *{
+    display: flex;
+    align-items: center;
+}
+
+.header-right{
+    justify-content: flex-end;
+}
+
+.search-bar{
+    grid-area: search-bar;
+}
+
+.settings{
+    grid-area: settings;
+}
+
+.picture-description{
+    grid-area: description;
+}
+
+.share{
+    grid-area: share;
+}
