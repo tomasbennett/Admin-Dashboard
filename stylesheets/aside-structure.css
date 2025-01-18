@@ -1,3 +1,100 @@
 aside{
-    
+    --aside-top-row: 10rem;
+    /* --aside-middle-row: 42rem; */
+    --aside-bottom-row: 62rem;
+
+    --aside-structure-rows: var(--aside-top-row) 
+                            /* var(--aside-middle-row) */
+                            var(--aside-bottom-row);
+
+                            
+    --aside-margin-left: 2rem;
+    --aside-margin-top-bottom: 3rem;
+    --aside-column-gap: 4rem;
+
+    --aside-ul-row-gap: 2rem;
+    --aside-nav-row-gap: 8rem;
+}
+
+aside ul{
+    list-style-type: none;
+}
+
+aside a{
+    text-decoration: none;
+}
+
+aside a:link,
+aside a:visited{
+    color: black;
+}
+
+aside nav{
+    display: grid;
+    grid-template-rows: var(--aside-structure-rows);
+
+    row-gap: var(--aside-nav-row-gap);
+
+    margin: var(--aside-margin-top-bottom) 0;
+}
+
+
+
+
+
+
+
+aside nav > *{
+    display: flex;
+}
+
+aside nav > label{
+    align-items: center;
+
+    column-gap: var(--aside-column-gap);
+}
+
+aside nav ul{
+    flex-direction: column;
+    justify-content: center;
+
+    row-gap: var(--aside-ul-row-gap);
+}
+
+aside nav ul li{
+    height: 5.3rem;
+}
+
+aside nav ul li:nth-of-type(6){
+    margin-bottom: 5rem;
+}
+
+aside nav ul li,
+aside nav ul li a,
+aside nav ul li label{
+    display: flex;
+
+    width: 100%;
+}
+
+aside nav ul li,
+aside nav ul li a,
+aside nav label{
+    column-gap: var(--aside-column-gap);
+}
+
+aside nav ul li p{
+    margin: auto 0;
+}
+
+aside nav input{
+    display: none;
+}
+
+aside nav svg{
+    margin-left: var(--aside-margin-left);
+}
+
+aside nav:has(input:checked){
+    background-color: brown;
 }

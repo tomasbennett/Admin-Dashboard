@@ -1,9 +1,9 @@
 :root{
     font-size: 62.5%;
 
-    --body-structure-columns: 15rem minmax(100rem, 1fr);
+    --body-structure-columns: 30rem minmax(100rem, 1fr);
     --body-structure-rows: 25rem 
-                           minmax(50rem, 1fr);
+                           minmax(40rem, 1fr);
 }
 
 *,
@@ -29,6 +29,16 @@ html, body{
 
 
 }
+
+/* GENERAL STYLING ***START*** */
+
+svg{
+    display: block;
+    height: 100%;
+    aspect-ratio: 1;
+}
+
+/* GENERAL STYLING ***END*** */
 
 header{
     grid-area: header;
