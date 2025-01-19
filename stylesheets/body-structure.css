@@ -2,9 +2,23 @@
     font-size: 62.5%;
 
     --body-structure-columns: 30rem minmax(100rem, 1fr);
-    --body-structure-rows: 25rem 
-                           minmax(40rem, 1fr);
+    --body-structure-rows: 20rem 
+                           minmax(80rem, 1fr);
 }
+
+/* So we want aside nav to have gaps between all sections that increase
+always with screen height, and at a certain screen height reach around 2rem
+and stop decreasing there. ANSWER: GAPS are min(screen height dvh, rem)!!! 
+If possible we then want the gaps between items to shrink for a little bit
+with the screen height and then after that stop. 
+ANSWER: A very clever calc(minrem, screen height, maxrem) whereby our 
+maxrem picks up off the minrem on the above "ANSWER" and uses the same dvh
+unit to pick up immediately
+Finally we want the items to shrink to a certain size and then stop
+finally causing an overflow. ANSWER: Another calc() 
+NOTE: If possible to move them one after another then please figure that
+out but please also see about moving all at the same time and what
+the differences in the two approaches are.  */
 
 *,
 *::after,
