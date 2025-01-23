@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="./stylesheets/aside-structure.css">
     <link rel="stylesheet" href="./stylesheets/main-structure.css">
     
-
+    <script defer src="script.js"></script>
 </head>
 <body>
     <header>
@@ -29,18 +29,22 @@
 
     <aside>
         <nav>
-            <label class="checkbox-label dashboard">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 21 21">
-                    <title>view-dashboard-outline</title>
-                    <path d="M19,5V7H15V5H19M9,5V11H5V5H9M19,13V19H15V13H19M9,17V19H5V17H9M21,3H13V9H21V3M11,3H3V13H11V3M21,11H13V21H21V11M11,15H3V21H11V15Z" />
-                </svg>
-                <input type="checkbox" id="checkbox-dashboard" />
-                <p class="dashboard-text">
-                    Dashboard
-                </p>
-            </label>
-         
-            <ul class="nav-links dashboard-nav">
+            <ul class="dashboard-ul">
+                <li>
+                    <label class="checkbox-label dashboard">
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="2 2 21 21">
+                            <title>view-dashboard-outline</title>
+                            <path d="M19,5V7H15V5H19M9,5V11H5V5H9M19,13V19H15V13H19M9,17V19H5V17H9M21,3H13V9H21V3M11,3H3V13H11V3M21,11H13V21H21V11M11,15H3V21H11V15Z" />
+                        </svg>
+                        <input type="checkbox" id="checkbox-dashboard" />
+                        <p class="dashboard-text">
+                            Dashboard
+                        </p>
+                    </label>
+                </li>
+            </ul>
+
+            <ul class="main-nav-ul">
                 <li>
                     <a href="#" target="_self">
                         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -90,6 +94,9 @@
                     </svg>
                     <p>Communities</p>
                 </li>
+
+            </ul>
+            <ul class="lower-nav-ul">
 
                 <li>
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

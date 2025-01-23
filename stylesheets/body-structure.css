@@ -1,9 +1,8 @@
 :root{
     font-size: 62.5%;
 
-    --body-structure-columns: 30rem minmax(100rem, 1fr);
     --body-structure-rows: 20rem 
-                           minmax(80rem, 1fr);
+                           minmax(50rem, 1fr);
 }
 
 /* So we want aside nav to have gaps between all sections that increase
@@ -30,44 +29,32 @@ the differences in the two approaches are.  */
 
 html, body{
     font-size: 1.6rem;
+    font-family: Roboto sans-serif;
 
     width: 100dvw;
     height: 100dvh;
-    overflow: auto;
 
     display: grid;
-    grid-template-columns: var(--body-structure-columns);
     grid-template-rows: var(--body-structure-rows);
-    grid-template-areas: "sidebar header"
-                         "sidebar main";
-
-
 }
 
 /* GENERAL STYLING ***START*** */
 
 svg{
-    display: block;
     height: 100%;
-    aspect-ratio: 1;
+    fill: white;
 }
 
 /* GENERAL STYLING ***END*** */
 
 header{
-    grid-area: header;
-
     background-color: aqua;
 }
 
 aside{
-    grid-area: sidebar;
-
     background-color: blue;
 }
 
 main{
-    grid-area: main;
-
     background-color: darkblue;
 }
