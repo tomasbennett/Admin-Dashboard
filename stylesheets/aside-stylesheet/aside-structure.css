@@ -1,18 +1,19 @@
 aside{
     /* Contribute towards height */
-    --aside-first-li-height: 8rem; /* 8rem */
-    --aside-li-height: 5rem; /* 9 * 5rem = 45rem + 8 = 53rem */ 
-    --aside-ul-row-gap: 1rem; /* 1rem * 7 60rem */
-    --aside-nav-row-gap: 5rem; /* 5rem * 2 */
+    --aside-first-li-height: 5rem; /* 8rem */
+    --aside-li-height: 3rem; /* 9 * 5rem = 45rem + 8 = 53rem */ 
+    --aside-ul-row-gap: 1.5rem; /* 1rem * 7 60rem */
+    --aside-nav-row-gap: 7rem; /* 5rem * 2 */
     
     --aside-font-size: 1.8rem;
     --aside-font-weight: 550;
 
-    --aside-padding: 4rem 1rem;
+    --aside-li-width: 28rem;
+    --aside-nav-padding: 4rem 1rem;
     --aside-column-gap: 1rem;
 }
 
-aside{
+aside {
     font-size: var(--aside-font-size);
     font-family: sans-serif;
     font-weight: var(--aside-font-weight);
@@ -26,9 +27,10 @@ aside{
     display: flex;
 
     height: 100dvh;
-    width: 30rem;
-    padding: var(--aside-padding);
+    width: var(--aside-li-width);
+    border-right: white .4rem solid;
     overflow-y: auto;
+    overflow-x: hidden;
 }
 
 aside ul{
@@ -50,17 +52,27 @@ aside p{
     color: white;
 }
 
+aside p{
+    white-space: nowrap;
+
+    margin-left: var(--aside-column-gap);
+
+    flex-shrink: 1;
+}
+
 aside nav{
     display: flex;
     flex-direction: column;
 
-    width: 100%;
+    width: var(--aside-li-width);
     height: max-content;
+    padding: var(--aside-nav-padding);
 
     row-gap: var(--aside-nav-row-gap);
 }
 
 aside nav ul li{
+    width: 100%;
     height: var(--aside-li-height);
 
     display: flex;
@@ -68,8 +80,6 @@ aside nav ul li{
     border-radius: .4rem;
 
     overflow: hidden;
-
-    transition: background-color 300ms linear;
 }
 
 aside nav ul:first-of-type li{
@@ -81,17 +91,6 @@ aside nav ul *:has(> svg){
     align-items: center;
 
     column-gap: var(--aside-column-gap);
-
-    overflow: hidden;
-}
-
-aside li:hover{
-    background-color: rgba(206, 206, 206, 0.4);
-}
-
-aside li:active{
-    background-color: rgba(255, 255, 255, 0.4);
-    transition: none;
 }
 
 aside li,
@@ -101,12 +100,9 @@ aside li label{
 
 aside svg{
     margin-left: var(--aside-column-gap);
+
+    flex-shrink: 0;
 }
-
-
-
-
-
 
 aside nav input{
     display: none;
