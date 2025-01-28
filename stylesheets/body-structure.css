@@ -1,7 +1,16 @@
 :root{
     font-size: 62.5%;
 
-    --body-structure-rows: 20rem 
+    --sidebar-width: 8rem;
+
+    --sidebar-colour: rgb(0, 120, 212);
+    --main-background-colour: white;
+    --text-object-colour: grey;
+}
+
+body{
+    --body-structure-columns: var(--sidebar-width) minmax(30rem ,1fr);
+    --body-structure-rows: auto 
                            minmax(50rem, 1fr);
 }
 
@@ -35,27 +44,37 @@ html, body{
     height: 100dvh;
 
     display: grid;
+    grid-template-columns: var(--body-structure-columns);
     grid-template-rows: var(--body-structure-rows);
+    grid-template-areas: ". header"
+                         ". main";
 }
 
 /* GENERAL STYLING ***START*** */
 
 svg{
     height: 100%;
-    aspect-ratio: 1;
     fill: white;
+    display: block;
+}
+
+input[type="checkbox"]{
+    display: none;
 }
 
 /* GENERAL STYLING ***END*** */
 
 header{
-    background-color: aqua;
-}
+    background-color: whitesmoke;
 
-aside{
-    background-color: blue;
+    grid-area: header;
 }
 
 main{
-    background-color: darkblue;
+    background-color: #dfdfdf;
+
+    grid-area: main;
+
+    
+
 }

@@ -1,5 +1,4 @@
 aside{
-    --sidebar-width: 8rem;
     --sidebar-margin-top: -2rem;
 
     --sidebar-transition-speed: 350ms;
@@ -28,11 +27,7 @@ aside:has(#checkbox-dashboard:checked){
     width: var(--sidebar-width);
 
     & li{
-        width: 5rem;
-    }
-
-    & ul:first-of-type li{
-        width: 5rem;
+        width: var(--sidebar-li-width);
     }
 
     & ul svg{
