@@ -2,7 +2,6 @@ aside{
     --sidebar-margin-top: -2rem;
 
     --sidebar-transition-speed: 350ms;
-    --sidebar-li-width: 5rem;
 }
 
 aside{
@@ -35,7 +34,7 @@ aside:has(#checkbox-dashboard:checked){
     }
 
     & ul:first-of-type svg{
-        margin-left: 0;
+        margin-left: var(--aside-first-svg-margin-left);
     }
 
     & ul{

@@ -1,8 +1,10 @@
 aside{
     /* Contribute towards height */
+    --sidebar-li-width: 5rem;
+
     --aside-first-li-height: 5rem; /* 8rem */
-    --aside-li-height: 3rem; /* 9 * 5rem = 45rem + 8 = 53rem */ 
-    --aside-ul-row-gap: 1.5rem; /* 1rem * 7 60rem */
+    --aside-li-height: 3.5rem; /* 9 * 5rem = 45rem + 8 = 53rem */ 
+    --aside-ul-row-gap: .8rem; /* 1rem * 7 60rem */
     --aside-nav-row-gap: 7rem; /* 5rem * 2 */
     
     --aside-font-size: 1.8rem;
@@ -10,7 +12,13 @@ aside{
 
     --aside-li-width: 28rem;
     --aside-nav-padding: 4rem 1rem;
+
     --aside-column-gap: 1rem;
+
+    --aside-first-svg-height: calc(var(--aside-first-li-height) * 0.9);
+    --aside-first-svg-margin-left: calc((var(--sidebar-li-width) - var(--aside-first-svg-height)) / 2); 
+    --aside-svg-height: calc(var(--aside-li-height) * 0.8);
+    --aside-svg-margin-left: calc((var(--sidebar-li-width) - var(--aside-svg-height)) / 2);
 }
 
 aside{
@@ -100,10 +108,22 @@ aside li label{
 }
 
 aside svg{
-    margin-left: var(--aside-column-gap);
+    margin-left: var(--aside-svg-margin-left);
 
     flex-shrink: 0;
+
+    height: var(--aside-svg-height);
 }
+
+aside:has(:not(#checkbox-dashboard:checked)) ul:first-of-type svg{
+    height: var(--aside-first-svg-height);
+
+    margin-left: 1rem;
+}
+
+
+
+
 
 /* 
 aside nav input{
