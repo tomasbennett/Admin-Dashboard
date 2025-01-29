@@ -194,6 +194,8 @@ header::after{
     border-radius: 50%;
     border: var(--header-border-width-post) black solid;
 
+    box-shadow: 0 .6rem 1.2rem rgba(0, 0, 0, 0.2);
+
     background: linear-gradient(to bottom right, 
                     var(--sidebar-colour) 0%, 
                     var(--sidebar-colour) 38%,  
@@ -204,11 +206,14 @@ header::after{
 
     cursor: pointer;
 
-    transition: scale 300ms ease-out;
+    transition: scale 300ms ease-out,
+                box-shadow 300ms ease-out;
 }
 
 .settings label:hover{
     scale: 1.3;
+
+    box-shadow: 0 .6rem 1.2rem rgba(0, 0, 0, 0.3);
 }
 
 .settings .bell-icon-container{

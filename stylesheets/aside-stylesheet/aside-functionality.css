@@ -1,48 +1,52 @@
 aside{
-    --sidebar-margin-top: -2rem;
-
     --sidebar-transition-speed: 350ms;
-}
+
+    --sidebar-ul-width: calc(var(--aside-first-svg-height) + var(--aside-svg-margin-left) * 2);
+    --sidebar-reduced-nav-row-gap: min(5rem, var(--aside-nav-row-gap));
+    --sidebar-text-right-distance: 3rem;
+}   
 
 aside{
     transition: width var(--sidebar-transition-speed) ease-in-out;
 }
 
-aside svg{
-    transition: margin-right var(--sidebar-transition-speed) ease-in-out,
-                margin-left var(--sidebar-transition-speed) ease-in-out;
-}
-
-aside ul{
-    transition: margin-top var(--sidebar-transition-speed) ease-in-out;
+aside nav{
+    transition: row-gap var(--sidebar-transition-speed) ease-in-out;
 }
 
 aside li{
-    transition: background-color 300ms linear,
-                width var(--sidebar-transition-speed) ease-in-out;
+    transition: background-color 300ms linear;
+}
+
+aside ul:first-of-type li{
+    transition: transform var(--sidebar-transition-speed) ease-in-out;
+}
+
+aside ul{
+    transition: width var(--sidebar-transition-speed) ease-in-out;
+}
+
+aside ul p{
+    transition: transform var(--sidebar-transition-speed) ease-in-out;
 }
 
 aside:has(#checkbox-dashboard:checked){
     width: var(--sidebar-width);
 
-    & li{
-        width: var(--sidebar-li-width);
+    & nav{
+        row-gap: var(--sidebar-reduced-nav-row-gap);
     }
 
-    & ul svg{
-        margin-right: 2rem;
+    & nav ul{
+        width: var(--sidebar-ul-width);
     }
 
-    & ul:first-of-type svg{
-        margin-left: var(--aside-first-svg-margin-left);
+    & nav ul:first-of-type li{
+        transform: translateY(0%);
     }
 
-    & ul{
-        margin-top: var(--sidebar-margin-top);
-    }
-
-    & ul:first-of-type{
-        margin-top: 0;
+    & nav ul li p{
+        transform: translateX(var(--sidebar-text-right-distance));
     }
 }
 

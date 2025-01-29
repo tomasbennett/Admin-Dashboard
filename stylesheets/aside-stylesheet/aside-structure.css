@@ -1,24 +1,25 @@
 aside{
-    /* Contribute towards height */
-    --sidebar-li-width: 5rem;
 
-    --aside-first-li-height: 5rem; /* 8rem */
-    --aside-li-height: 3.5rem; /* 9 * 5rem = 45rem + 8 = 53rem */ 
-    --aside-ul-row-gap: .8rem; /* 1rem * 7 60rem */
-    --aside-nav-row-gap: 7rem; /* 5rem * 2 */
+    --aside-first-li-height: 6rem;
+    --aside-first-svg-height: min(4.8rem, var(--aside-first-li-height));
+
+    --aside-li-height: min(3.8rem, var(--aside-first-li-height)); /*  * 9  3.8rem */
+    --aside-svg-height: min(3.2rem, var(--aside-li-height));
+
+
+    --aside-ul-row-gap: .8rem; /* * 7 */
+    --aside-nav-row-gap: 7rem; 
     
     --aside-font-size: 1.8rem;
     --aside-font-weight: 550;
 
     --aside-li-width: 28rem;
-    --aside-nav-padding: 4rem 1rem;
 
-    --aside-column-gap: 1rem;
+    --aside-nav-padding-block: 4rem;
+    --aside-nav-padding: var(--aside-nav-padding-block) var(--aside-nav-padding-inline);
 
-    --aside-first-svg-height: calc(var(--aside-first-li-height) * 0.9);
-    --aside-first-svg-margin-left: calc((var(--sidebar-li-width) - var(--aside-first-svg-height)) / 2); 
-    --aside-svg-height: calc(var(--aside-li-height) * 0.8);
-    --aside-svg-margin-left: calc((var(--sidebar-li-width) - var(--aside-svg-height)) / 2);
+    --aside-svg-margin-left: .5rem;
+    --aside-li-column-gap: max(2rem, var(--aside-svg-margin-left));
 }
 
 aside{
@@ -43,8 +44,11 @@ aside{
 aside ul{
     list-style-type: none;
 
+    width: 100%;
+
     display: flex;
     flex-direction: column;
+    align-items: center;
 
     row-gap: var(--aside-ul-row-gap);
 }
@@ -61,10 +65,9 @@ aside p{
 
 aside p{
     white-space: nowrap;
+    overflow: hidden;
 
-    margin-left: var(--aside-column-gap);
-
-    flex-shrink: 1;
+    flex-shrink: 0;
 }
 
 aside nav{
@@ -93,13 +96,21 @@ aside nav ul:first-of-type li{
     height: var(--aside-first-li-height);
 
     font-size: calc(var(--aside-font-size) + .5rem);
+
+    transform: translateY(25%);
+}
+
+aside nav ul:first-of-type svg{
+    height: var(--aside-first-svg-height);
 }
 
 aside nav ul *:has(> svg){
+    width: 100%;
+
     display: flex;
     align-items: center;
 
-    column-gap: var(--aside-column-gap);
+    column-gap: var(--aside-li-column-gap);
 }
 
 aside li,
@@ -108,27 +119,18 @@ aside li label{
 }
 
 aside svg{
-    margin-left: var(--aside-svg-margin-left);
+    margin-left: var(--aside-svg-margin-left); 
 
     flex-shrink: 0;
 
     height: var(--aside-svg-height);
-}
-
-aside:has(:not(#checkbox-dashboard:checked)) ul:first-of-type svg{
-    height: var(--aside-first-svg-height);
-
-    margin-left: 1rem;
+    width: var(--aside-first-svg-height);
 }
 
 
-
-
-
-/* 
 aside nav input{
     display: none;
-} */
+}
 
 
 
