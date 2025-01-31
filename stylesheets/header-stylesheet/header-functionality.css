@@ -1,0 +1,13 @@
+header{
+
+}
+
+.settings{
+    --settings-reduced-font-size: 1.6rem;
+}
+
+@media (width <= 60rem){
+    header .settings{
+        font-size: var(--settings-reduced-font-size);
+    }
+}

@@ -20,6 +20,8 @@ aside{
 
     --aside-svg-margin-left: .5rem;
     --aside-li-column-gap: max(2rem, var(--aside-svg-margin-left));
+
+    --aside-dashboard-extra-gap: 2rem;
 }
 
 aside{
@@ -39,6 +41,8 @@ aside{
     width: var(--aside-li-width);
     overflow-y: auto;
     overflow-x: hidden;
+
+    will-change: width;
 }
 
 aside ul{
@@ -79,6 +83,8 @@ aside nav{
     padding: var(--aside-nav-padding);
 
     row-gap: var(--aside-nav-row-gap);
+
+    will-change: row-gap;
 }
 
 aside nav ul li{
@@ -98,6 +104,10 @@ aside nav ul:first-of-type li{
     font-size: calc(var(--aside-font-size) + .5rem);
 
     transform: translateY(25%);
+
+    & label > *{
+        transform: translateX(var(--aside-dashboard-extra-gap));
+    }
 }
 
 aside nav ul:first-of-type svg{

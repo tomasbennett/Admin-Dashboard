@@ -11,7 +11,7 @@
 
 body{
     --body-structure-columns: var(--sidebar-width) minmax(30rem ,1fr);
-    --body-structure-rows: auto 
+    --body-structure-rows: 22rem 
                            minmax(50rem, 1fr);
 }
 

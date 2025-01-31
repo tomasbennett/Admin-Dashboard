@@ -3,7 +3,9 @@ aside{
 
     --sidebar-ul-width: calc(var(--aside-first-svg-height) + var(--aside-svg-margin-left) * 2);
     --sidebar-reduced-nav-row-gap: min(5rem, var(--aside-nav-row-gap));
+    
     --sidebar-text-right-distance: 3rem;
+    --sidebar-first-text-right-distance: 5rem;
 }   
 
 aside{
@@ -18,7 +20,8 @@ aside li{
     transition: background-color 300ms linear;
 }
 
-aside ul:first-of-type li{
+aside ul:first-of-type li,
+aside ul:first-of-type li label > *{
     transition: transform var(--sidebar-transition-speed) ease-in-out;
 }
 
@@ -41,12 +44,20 @@ aside:has(#checkbox-dashboard:checked){
         width: var(--sidebar-ul-width);
     }
 
-    & nav ul:first-of-type li{
-        transform: translateY(0%);
-    }
-
     & nav ul li p{
         transform: translateX(var(--sidebar-text-right-distance));
+    }
+
+    & nav ul:first-of-type li{
+        transform: translateY(0%);
+    
+        & svg{
+            transform: translateX(0rem);
+        }
+    
+        & p{
+            transform: translateX(var(--sidebar-first-text-right-distance));
+        }
     }
 }
 
