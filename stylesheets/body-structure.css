@@ -4,15 +4,18 @@
     --aside-nav-padding-inline: 1rem;
     --sidebar-width: calc(8rem + var(--aside-nav-padding-inline));
 
+    --body-padding-left-right: clamp(2rem, 6.667dvw - 4.7rem, 8rem);
+
     --sidebar-colour: rgb(0, 120, 212);
     --main-background-colour: white;
     --text-object-colour: grey;
+    --header-svg-fill-colour: #a0a0a0e3;
 }
 
 body{
-    --body-structure-columns: var(--sidebar-width) minmax(30rem ,1fr);
-    --body-structure-rows: 22rem 
-                           minmax(50rem, 1fr);
+    --body-structure-columns: var(--sidebar-width) 1fr; /* minmax(96rem, 1fr) */
+    --body-structure-rows: 20rem 
+                           minmax(60rem, 1fr);
 }
 
 *,
@@ -25,9 +28,10 @@ body{
 
 html, body{
     font-size: 1.6rem;
-    font-family: Roboto sans-serif;
+    font-family: sans-serif;
 
     width: 100dvw;
+    /* min-width: fit-content; */
     height: 100dvh;
 
     display: grid;
@@ -35,6 +39,9 @@ html, body{
     grid-template-rows: var(--body-structure-rows);
     grid-template-areas: ". header"
                          ". main";
+
+
+    
 }
 
  /* GENERAL STYLING ***START***  */

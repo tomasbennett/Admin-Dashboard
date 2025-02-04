@@ -1,3 +1,137 @@
 main{
+    --main-padding: 2rem var(--body-padding-left-right) 3rem var(--body-padding-left-right);
+
+    /* --main-min-project-width: 10rem; */
+    --main-grid-columns: 1fr auto;
+
+    --main-titles-font-size: 1.7rem;
+    --main-titles-font-weight: 550;
+
+    --projects-container-max-width: 84rem;
+    /* --projects-container-min-width: 65.6rem; */
+    --projects-column-row-gap: 1.5rem;
+
+    --main-socials-container-width: 28rem;
+
+}
+
+main{
+    position: relative;
+    z-index: -1;
+
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-columns: var(--main-grid-columns);
+
+    align-items: center;
+    justify-content: end;
+
+    column-gap: var(--projects-column-row-gap);
+
+    padding: var(--main-padding);
+}
+
+.main-projects-container{
+    /* --projects-container-min-width: ; */
+
+    width: 100%;
+    max-width: var(--projects-container-max-width);
+    /* min-width: max-content; */
+    height: 100%;
+
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto repeat(3, 1fr);
+
+    place-items: center;
+
+    column-gap: var(--projects-column-row-gap);
+    row-gap: var(--projects-column-row-gap);
+
+    background-color: brown;
+
+    /* overflow: hidden; */
+}
+
+main .my-projects-header{
+    grid-column: span 2;
+
+    margin-right: auto;
+
+    font-size: var(--main-titles-font-size);
+    font-weight: var(--main-titles-font-weight);
+}
+
+.main-projects-container .projects{
+    background-color: blue;
+
+    height: 100%;
+    width: 100%;
+}
+
+.main-projects-container .project-1,
+.main-projects-container .project-2{
+    align-self: start;
+}
+
+.main-projects-container .project-5,
+.main-projects-container .project-6{
+    align-self: end;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.main-socials-container{
+    --socials-container-row-gap: 2rem;
+
+    width: var(--main-socials-container-width);
+    height: 100%;
+
+    display: flex;
+    flex-direction: column;
+
+    row-gap: var(--socials-container-row-gap);
+
+}
+
+.main-socials-container > *{
+    flex: 1;
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: column;
     
+    /* background-color: blueviolet; */
+
+    box-shadow: .4rem .4rem 1rem var(--header-svg-fill-colour);
+}
+
+.main-socials-container .my-projects-header{
+    margin-bottom: 0;
+}
+
+.announcement-container,
+.trending-container{
+    flex: 1;
+
+    /* background-color: white; */
+
+    width: 100%;
 }
