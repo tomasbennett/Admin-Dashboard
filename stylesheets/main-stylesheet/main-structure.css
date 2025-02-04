@@ -52,7 +52,7 @@ main{
     column-gap: var(--projects-column-row-gap);
     row-gap: var(--projects-column-row-gap);
 
-    background-color: brown;
+    /* background-color: brown; */
 
     /* overflow: hidden; */
 }
@@ -83,9 +83,20 @@ main .my-projects-header{
     align-self: end;
 }
 
+.main-projects-container .projects .iframe-container{
+    width: 100%;
+    height: 100%;
 
+    overflow: hidden;
+}
 
+.main-projects-container .projects .iframe-container iframe{
+    width: 800%;
+    height: 800%;
 
+    transform: scale(12.5%, 12.5%);
+    transform-origin: top left;
+}
 
 
 
