@@ -13,9 +13,9 @@
 }
 
 body{
-    --body-structure-columns: var(--sidebar-width) 1fr; /* minmax(96rem, 1fr) */
+    --body-structure-columns: var(--sidebar-width) auto; /* minmax(96rem, 1fr) */
     --body-structure-rows: 20rem 
-                           minmax(60rem, 1fr);
+                           minmax(90rem, 1fr);
 }
 
 *,
@@ -31,7 +31,6 @@ html, body{
     font-family: sans-serif;
 
     width: 100dvw;
-    /* min-width: fit-content; */
     height: 100dvh;
 
     display: grid;
@@ -39,6 +38,9 @@ html, body{
     grid-template-rows: var(--body-structure-rows);
     grid-template-areas: ". header"
                          ". main";
+
+    position: relative;
+    z-index: -5;
 
 }
 
@@ -65,7 +67,5 @@ main{
     background-color: #dfdfdf;
 
     grid-area: main;
-
-    
 
 }

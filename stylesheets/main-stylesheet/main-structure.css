@@ -1,18 +1,18 @@
 main{
     --main-padding: 2rem var(--body-padding-left-right) 3rem var(--body-padding-left-right);
 
-    /* --main-min-project-width: 10rem; */
-    --main-grid-columns: 1fr auto;
+    
 
     --main-titles-font-size: 1.7rem;
     --main-titles-font-weight: 550;
 
     --projects-container-max-width: 84rem;
-    /* --projects-container-min-width: 65.6rem; */
-    --projects-column-row-gap: 1.5rem;
+    --projects-container-min-width: 50rem;
+    --projects-column-row-gap: 2rem;
 
     --main-socials-container-width: 28rem;
 
+    --main-grid-columns: minmax(var(--projects-container-min-width), var(--projects-container-max-width)) auto;
 }
 
 main{
@@ -26,22 +26,19 @@ main{
     grid-template-columns: var(--main-grid-columns);
 
     align-items: center;
-    justify-content: end;
+    justify-content: space-between;
 
     column-gap: var(--projects-column-row-gap);
 
     padding: var(--main-padding);
+
 }
 
 .main-projects-container{
-    /* --projects-container-min-width: ; */
 
     width: 100%;
-    max-width: var(--projects-container-max-width);
-    /* min-width: max-content; */
     height: 100%;
 
-    margin: 0 auto;
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -51,10 +48,6 @@ main{
 
     column-gap: var(--projects-column-row-gap);
     row-gap: var(--projects-column-row-gap);
-
-    /* background-color: brown; */
-
-    /* overflow: hidden; */
 }
 
 main .my-projects-header{
@@ -67,35 +60,41 @@ main .my-projects-header{
 }
 
 .main-projects-container .projects{
-    background-color: blue;
+    /* background-color: blue; */
 
     height: 100%;
     width: 100%;
-}
 
-.main-projects-container .project-1,
-.main-projects-container .project-2{
-    align-self: start;
-}
+    border-radius: .5rem;
 
-.main-projects-container .project-5,
-.main-projects-container .project-6{
-    align-self: end;
+    box-shadow: .4rem .4rem .5rem var(--header-svg-fill-colour);
+
+    overflow: hidden;
 }
 
 .main-projects-container .projects .iframe-container{
     width: 100%;
     height: 100%;
 
+    position: relative;
+
+    
+
     overflow: hidden;
 }
 
 .main-projects-container .projects .iframe-container iframe{
-    width: 800%;
-    height: 800%;
+    width: 156.2rem;
+    height: 80rem;
 
-    transform: scale(12.5%, 12.5%);
-    transform-origin: top left;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+
+    transform-origin: center;
+
+    
 }
 
 
@@ -122,27 +121,73 @@ main .my-projects-header{
 }
 
 .main-socials-container > *{
-    flex: 1;
+    flex: 1 0 0;
 
     width: 100%;
+    height: 0;
 
     display: flex;
     flex-direction: column;
-    
-    /* background-color: blueviolet; */
 
-    box-shadow: .4rem .4rem 1rem var(--header-svg-fill-colour);
+    row-gap: var(--projects-column-row-gap);
+
+    
 }
 
-.main-socials-container .my-projects-header{
-    margin-bottom: 0;
+
+main .my-projects-header{
+    margin-bottom: -1rem;
 }
 
 .announcement-container,
 .trending-container{
-    flex: 1;
+    flex: 1 0 0;
 
-    /* background-color: white; */
-
+    height: 0;
     width: 100%;
+
+    background-color: white;
+
+    border-radius: .5rem;
+
+    box-shadow: .4rem .4rem .5rem var(--header-svg-fill-colour);
+
+    --announcement-header-font-size: 1.6rem;
+    --announcement-header-font-weight: 550;
+
+    --announcement-text-font-size: 1.4rem;
+    --announcement-text-font-weight: 520;
+
+    --announcement-padding: 3rem 2.5rem;
+
+    --announcement-row-gap: 3rem;
+
+    --announcement-item-min-width: 80%;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+
+    row-gap: var(--announcement-row-gap);
+
+    padding: var(--announcement-padding);
+
+    overflow-y: auto;
+}
+
+
+
+.main-socials-container .announcement-container .title,
+.main-socials-container .trending-container .title{
+    font-size: var(--announcement-header-font-size);
+    font-weight: var(--announcement-header-font-weight);
+
+    
+}
+
+.main-socials-container .announcement-container .description,
+.main-socials-container .trending-container .description{
+    font-size: var(--announcement-text-font-size);
+    font-weight: var(--announcement-text-font-weight);
 }
