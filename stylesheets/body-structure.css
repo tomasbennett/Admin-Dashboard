@@ -55,6 +55,18 @@ input[type="checkbox"]{
     display: none;
 }
 
+a{
+    text-decoration: none;
+}
+
+a:visited{
+    color: purple;
+}
+
+a:link{
+    color: var(--sidebar-colour);
+}
+
  /* GENERAL STYLING ***END***  */
 
 header{

@@ -48,6 +48,8 @@ main{
 
     column-gap: var(--projects-column-row-gap);
     row-gap: var(--projects-column-row-gap);
+
+    /* overflow: hidden; */
 }
 
 main .my-projects-header{
@@ -60,14 +62,14 @@ main .my-projects-header{
 }
 
 .main-projects-container .projects{
-    /* background-color: blue; */
-
     height: 100%;
     width: 100%;
 
     border-radius: .5rem;
 
     box-shadow: .4rem .4rem .5rem var(--header-svg-fill-colour);
+
+    display: grid;
 
     overflow: hidden;
 }
@@ -78,9 +80,9 @@ main .my-projects-header{
 
     position: relative;
 
-    
+    grid-area: 1 / 1 / 1 / 1;
 
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .main-projects-container .projects .iframe-container iframe{
@@ -93,9 +95,9 @@ main .my-projects-header{
     translate: -50% -50%;
 
     transform-origin: center;
-
-    
 }
+
+
 
 
 
@@ -158,36 +160,133 @@ main .my-projects-header{
     --announcement-text-font-size: 1.4rem;
     --announcement-text-font-weight: 520;
 
-    --announcement-padding: 3rem 2.5rem;
+    --announcement-trending-padding-top-bottom: 3rem;
+    --announcement-padding-left-right: 2.5rem;
 
-    --announcement-row-gap: 3rem;
+    --announcement-row-gap: 2rem;
 
     --announcement-item-min-width: 80%;
 
     display: flex;
     flex-direction: column;
 
-    justify-content: space-between;
+    justify-content: flex-start;
 
     row-gap: var(--announcement-row-gap);
 
-    padding: var(--announcement-padding);
-
-    overflow-y: auto;
+    overflow: auto;
 }
 
+.announcement-container{
+    padding: var(--announcement-trending-padding-top-bottom) var(--announcement-padding-left-right);
+}
 
+.trending-container{
+    --trending-container-img-margin-left: min(1.5rem, var(--announcement-padding-left-right));
+    --trending-container-padding: var(--announcement-trending-padding-top-bottom) 
+                        calc(var(--announcement-padding-left-right) - var(--trending-container-img-margin-left));
+
+    padding: var(--trending-container-padding);
+
+    & .img-container{
+        margin-left: var(--trending-container-img-margin-left);
+    }
+}
+
+.announcement-container .announcement{
+    display: flex;
+    flex-direction: column;
+
+    row-gap: .5rem;
+}
+
+.announcement-container .announcement:not(:last-child){
+    border-bottom: .2rem var(--header-svg-fill-colour) solid;
+
+    & .description{
+        margin-bottom: var(--announcement-row-gap);
+    }
+
+}
 
 .main-socials-container .announcement-container .title,
 .main-socials-container .trending-container .title{
     font-size: var(--announcement-header-font-size);
     font-weight: var(--announcement-header-font-weight);
-
-    
 }
 
 .main-socials-container .announcement-container .description,
 .main-socials-container .trending-container .description{
     font-size: var(--announcement-text-font-size);
     font-weight: var(--announcement-text-font-weight);
+}
+
+
+
+
+
+
+
+
+
+.trending-container .followed-channels{
+    --trending-container-item-height: 6rem;
+    --trending-container-column-gap: 2rem;
+    
+
+    --trending-container-img-height: 90%;
+
+    --trending-container-font-size: 1.4rem;
+    --trending-container-font-weight: 550;
+
+    width: 100%;
+    height: var(--trending-container-item-height);
+
+    display: flex;  
+
+    font-size: var(--trending-container-font-size);
+    font-weight: var(--trending-container-font-weight);
+
+    
+    border-radius: .4rem;
+
+    transition: box-shadow 200ms ease-out,
+                transform 200ms ease-out;
+}
+
+.trending-container .followed-channels a.youtube-channel-container{
+    display: flex;
+    align-items: center;
+
+    column-gap: var(--trending-container-column-gap);
+
+    width: 100%;
+    height: 100%;
+
+}
+
+a.youtube-channel-container .img-container{
+    flex-shrink: 0;
+
+    height: var(--trending-container-img-height);
+    aspect-ratio: 1;
+
+    border-radius: 50%;
+
+    /* margin-left: var(--trending-container-img-margin-left); */
+
+    overflow: hidden;
+}
+
+a.youtube-channel-container .img-container img{
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+}
+
+.trending-container .followed-channels:hover{
+    box-shadow: .4rem .4rem .8rem var(--header-svg-fill-colour);
+
+    transform: scale(1.05);
 }

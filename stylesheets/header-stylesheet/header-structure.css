@@ -192,8 +192,6 @@ header::after{
 
     font-size: var(--settings-font-size);
     font-weight: var(--settings-font-weight);
-
-    /* overflow: visible; */
 }
 
 .settings > *{
@@ -226,8 +224,6 @@ header::after{
     justify-content: center;
 
     cursor: pointer;
-
-    overflow: hidden;
 }
 
 .settings .bell-icon-container:hover{
