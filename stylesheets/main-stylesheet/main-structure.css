@@ -62,6 +62,7 @@ main .my-projects-header{
 }
 
 .main-projects-container .projects{
+
     height: 100%;
     width: 100%;
 
@@ -70,9 +71,15 @@ main .my-projects-header{
     box-shadow: .4rem .4rem .5rem var(--header-svg-fill-colour);
 
     display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: minmax(0, 1fr);
+
+    position: relative;
 
     overflow: hidden;
 }
+
+
 
 .main-projects-container .projects .iframe-container{
     width: 100%;
@@ -80,9 +87,7 @@ main .my-projects-header{
 
     position: relative;
 
-    grid-area: 1 / 1 / 1 / 1;
-
-    /* overflow: hidden; */
+    grid-area: 1 / 1 / -1 / -1;
 }
 
 .main-projects-container .projects .iframe-container iframe{
@@ -96,6 +101,211 @@ main .my-projects-header{
 
     transform-origin: center;
 }
+
+/* New Additions for new branch */
+
+.iframe-description-container{
+    --iframe-description-container-height: 80%;
+    
+    --iframe-description-container-padding: 1rem 2rem var(--iframe-description-container-padding-bottom);
+    --iframe-description-container-row-gap: 1.5rem;
+
+    --iframe-svg-width-height: 2.5rem;
+
+    --iframe-container-title-font-size: 1.5rem;
+    --iframe-container-title-font-weight: 550;
+    --iframe-container-description-font-size: 1.4rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
+    row-gap: var(--iframe-description-container-row-gap);
+
+    height: var(--iframe-description-container-height);
+    width: 100%;
+
+    padding: var(--iframe-description-container-padding);
+
+    margin-top: auto;
+
+    /* border: .2rem var(--header-svg-fill-colour) solid; */
+
+    grid-area: 1 / 1 / -1 / -1;
+
+    z-index: 2;
+
+    background-color: white;
+
+    overflow-y: auto;
+
+    transform: translateY(100%);
+
+    transition: transform 500ms ease-in-out;
+}
+
+.iframe-description-container .iframe-title{
+    font-size: var(--iframe-container-title-font-size);
+    font-weight: var(--iframe-container-title-font-weight);
+
+    position: relative;
+
+    text-align: center;
+}
+
+.iframe-description-container .iframe-title::after{
+    content: '';
+
+    position: absolute;
+    bottom: calc(var(--iframe-description-container-row-gap) * -0.5);
+    left: 0;
+
+    width: 100%;
+    height: .2rem;
+
+    background-color: var(--header-svg-fill-colour);
+
+}
+
+.iframe-description-container .iframe-paragraph{
+    font-size: var(--iframe-container-description-font-size);
+
+    text-align: center;
+}
+
+
+
+
+
+
+
+.iframe-svg-container{
+    display: flex;
+    column-gap: .5rem;
+
+    margin-top: auto;
+    margin-left: auto;
+}
+
+.iframe-svg-container > *{
+    height: var(--iframe-svg-width-height);
+    aspect-ratio: 1;
+
+    cursor: pointer;
+
+    overflow: hidden;
+}
+
+.iframe-svg-container > * svg{
+    fill: var(--header-svg-fill-colour);
+}
+
+.main-projects-container .project-1:hover .iframe-description-container.proj-1{
+    transform: translateY(0%);
+}
+
+
+
+.project-1{
+    --iframe-description-container-padding-bottom: 4rem;
+}
+
+.project-1 .iframe-lower-access-container{
+    --lower-access-container-height: calc(-.2rem + var(--iframe-description-container-padding-bottom));
+    --lower-access-bcg: blueviolet;
+
+    grid-area: 1 / 1 / -1 / -1;
+
+    height: var(--lower-access-container-height);
+    width: 100%;
+
+    margin-top: auto;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    z-index: 3;
+}
+ 
+.iframe-lower-access-container .lower-access-svg-container{
+    flex: 1 0 0;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 0;
+    aspect-ratio: 2;
+
+    border-color: white;
+    border-style: solid;
+    border-width: .2rem .2rem 0;
+
+    border-top-left-radius: .4rem;
+    border-top-right-radius: .4rem;
+
+    background-color: var(--lower-access-bcg);
+
+    transform: translateY(.2rem);
+
+    overflow: hidden;
+
+}
+
+.iframe-lower-access-container .lower-access-svg-container svg{
+    fill: white;
+
+    height: 95%;
+
+    transition: transform 300ms linear;
+}
+
+.lower-access-bar{
+    flex: .8 0 0;
+
+    height: 0;
+    width: 100%;
+
+    border-color: white;
+    border-style: solid;
+    border-width: .2rem 0 0;
+
+    background-color: var(--lower-access-bcg);
+}
+
+
+
+
+
+
+.project-1:hover .iframe-lower-access-container .lower-access-svg-container svg{
+    transform: rotate(180deg);
+}
+
+/* New Additions for new branch */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
