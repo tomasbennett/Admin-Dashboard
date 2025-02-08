@@ -113,7 +113,8 @@
 .project-3:hover .iframe-description-container,
 .project-4:hover .iframe-description-container,
 .project-5:hover .iframe-description-container,
-.project-6:hover .iframe-description-container{
+.project-6:hover .iframe-description-container,
+.lower-access-svg-container.lower-access-touch-event{
     transform: translateY(0%);
 }
 
@@ -217,7 +218,8 @@
 .project-3:hover .lower-access-svg-container svg,
 .project-4:hover .lower-access-svg-container svg,
 .project-5:hover .lower-access-svg-container svg,
-.project-6:hover .lower-access-svg-container svg{
+.project-6:hover .lower-access-svg-container svg,
+.lower-access-svg-container.lower-access-touch-event{
     transform: rotate(180deg);
 }
 
