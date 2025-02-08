@@ -108,13 +108,19 @@
     height: 70%;
 }
 
-.project-1:hover .iframe-description-container,
-.project-2:hover .iframe-description-container,
-.project-3:hover .iframe-description-container,
-.project-4:hover .iframe-description-container,
-.project-5:hover .iframe-description-container,
-.project-6:hover .iframe-description-container,
-.lower-access-svg-container.lower-access-touch-event{
+@media(hover: hover){
+    .project-1:hover .iframe-description-container,
+    .project-2:hover .iframe-description-container,
+    .project-3:hover .iframe-description-container,
+    .project-4:hover .iframe-description-container,
+    .project-5:hover .iframe-description-container,
+    .project-6:hover .iframe-description-container{
+        transform: translateY(0%);
+    }
+}
+
+
+.iframe-description-container:has(+ .iframe-lower-access-container .lower-access-svg-container.lower-access-touch-event){
     transform: translateY(0%);
 }
 
@@ -213,13 +219,18 @@
     background-color: var(--lower-access-bcg);
 }
 
-.project-1:hover .lower-access-svg-container svg,
-.project-2:hover .lower-access-svg-container svg,
-.project-3:hover .lower-access-svg-container svg,
-.project-4:hover .lower-access-svg-container svg,
-.project-5:hover .lower-access-svg-container svg,
-.project-6:hover .lower-access-svg-container svg,
-.lower-access-svg-container.lower-access-touch-event{
+@media(hover: hover){
+    .project-1:hover .lower-access-svg-container svg,
+    .project-2:hover .lower-access-svg-container svg,
+    .project-3:hover .lower-access-svg-container svg,
+    .project-4:hover .lower-access-svg-container svg,
+    .project-5:hover .lower-access-svg-container svg,
+    .project-6:hover .lower-access-svg-container svg{
+        transform: rotate(180deg);
+    }
+}
+
+.lower-access-svg-container.lower-access-touch-event svg{
     transform: rotate(180deg);
 }
 
